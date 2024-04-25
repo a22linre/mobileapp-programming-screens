@@ -6,7 +6,7 @@ Denna uppgift gick ut på att skapa en ny empty activity som sedan ska man kunna
 Först skapades ett nytt activity och sedan skapades en knapp i activity_main.xml:
 
 ```
-    <Button
+        <Button
         android:id="@+id/buttonStartSecondActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,6 +30,7 @@ Configurerade i MainActivity.java, vad som ska hända när knappen trycks. Detta
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("EXTRA_DATA", "Second Activity!");
                 startActivity(intent);
             }
         });
@@ -43,7 +44,7 @@ Text lades till i activity_second.xml för att förtydliga att det är second ac
         android:id="@+id/textViewData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Second Activity"
+        android:text="No data received"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -59,5 +60,5 @@ Skärmbilder:
 
 - Second Activity
 
-![](SecondActivityImg.png)
+![](SecondActivity2.png)
 
